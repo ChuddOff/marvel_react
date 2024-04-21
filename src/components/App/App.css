@@ -1,5 +1,10 @@
 .App {
-  text-align: center;
+  justify-content: center;
+  font-family: "Roboto Condensed", sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
 .App-logo {
@@ -26,6 +31,20 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.buttonRed {
+    margin: 0px;
+    width: 101px;
+    height: 38px;
+    background-color: rgb(159, 0, 19);
+    color: #ffffff;
+}
+.buttonGray {
+  width: 101px;
+  height: 38px;
+  background-color: rgb(92, 92, 92);
+  color: #ffffff;
 }
 
 @keyframes App-logo-spin {

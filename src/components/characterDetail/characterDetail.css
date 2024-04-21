@@ -1,0 +1,68 @@
+.charactersInfo {
+    max-width: 375px;
+    height: auto;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.25);
+    background: #fff;
+    padding: 25px;
+}
+
+.charactersInfo h4 {
+    font-weight: 400;
+    font-size: 14px;
+    color: #000;
+}
+.charactersInfo h3 {
+    font-weight: 700;
+    font-size: 18px;
+    color: #000;
+}
+
+.charactersInfo ul {
+    list-style-type: none;
+    padding: 0px;
+}
+.charactersInfo li {
+    padding: 10px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+    margin: 10px;
+}
+.charactersInfo li a {
+    color: #000;
+    text-decoration: none;
+}
+
+.charactersInfo .picture{
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap
+}
+.charactersInfo .picture img{
+    max-width: 150px;
+    max-height: 150px;
+}
+.charactersInfo .picture .more{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.charactersInfo .picture .more h3{
+    font-weight: 700;
+    font-size: 22px;
+    color: #000;
+    margin: 0;
+    width: 200px;
+}
+.charactersInfo .picture .more .buttons{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.charactersItems {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    height: 100%;
+}
