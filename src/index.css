@@ -1,3 +1,7 @@
+* {
+  box-sizing: revert;
+}
+
 body {
   margin: 0;
 

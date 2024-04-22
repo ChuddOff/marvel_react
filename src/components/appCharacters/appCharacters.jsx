@@ -23,29 +23,24 @@ const Characters = () => {
 
     console.log(characters);
 
-    if (!characters) {
-        return null;
-    }
 
     const characterList = characters.map((character, id) => {
         
         return (
             <Item
-            name={character.name}
-            url={character.thumbnail.path +'.'+ character.thumbnail.extension}
+            character = {character}
             id = {id}
             key = {id}
             setCharacterAbout = {(id) => setCharacterAbout(characters[id])} />
         )
     })
-
     return (
         <main className='main'>
             <div className='charactersItems'>
-                {characterList}
+                {characters.length !== 0 ? characterList : <View/>}
                 <button 
                 className='buttonRed'
-                onClick={() => {generateCharacters()}} 
+                onClick={generateCharacters} 
                 >LOAD MORE</button>
             </div>
             
@@ -53,6 +48,27 @@ const Characters = () => {
             characterAbout = {characterAbout} />
         </main>
     )
+}
+
+const View = () => {
+
+    const ar = [];
+
+    for (let i = 0; i < 9; i++) {
+        ar.push(
+            <div className='item placeholder-glow' key={i}>
+                <img className='placeholder' src='image_not_available.jpg' alt="" />
+                <h3 className='placeholder col-11'>Hobgo</h3>
+            </div>
+        )
+    }
+
+    return (
+        <>
+            {ar}
+        </>
+    )
+    
 }
 
 export default Characters;

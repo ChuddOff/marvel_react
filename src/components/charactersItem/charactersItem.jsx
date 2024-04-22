@@ -1,13 +1,13 @@
 import './charactersItem.css'
 
-const Item = ({name, url, id, setCharacterAbout}) => {
+const Item = ({character, id, setCharacterAbout}) => {
 
     return (
         <div 
         className='item'
         onClick={() => {setCharacterAbout(id)}} >
-            <img src={url} alt="" />
-            <h3>{name}</h3>
+            <img src={character.thumbnail.path +'.'+ character.thumbnail.extension} alt="" />
+            <h3>{character.name}</h3>
         </div>
     )
 }
