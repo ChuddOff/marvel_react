@@ -8,8 +8,10 @@ import './appCharacters.css'
 const Characters = () => {
     const marvelServices = new MarvelServices();
 
-    const [characters, setCharacters] = useState([])
-    const [characterAbout, setCharacterAbout] = useState(null)
+    const [characters, setCharacters] = useState([]);
+    const [characterAbout, setCharacterAbout] = useState(null);
+    const [loadingTimes, setLoadingTimes] = useState();
+    const [loadedToggle, setLoadedToggle] = useState();
 
 
     const generateCharacters = () => {
@@ -19,6 +21,8 @@ const Characters = () => {
     }
     useEffect(() => {
         generateCharacters();
+        setLoadingTimes(9);
+        setLoadedToggle(false)
     }, [])
 
     console.log(characters);
@@ -37,10 +41,17 @@ const Characters = () => {
     return (
         <main className='main'>
             <div className='charactersItems'>
-                {characters.length !== 0 ? characterList : <View/>}
+                {characters.length == loadingTimes ? characterList : <View loadingTimes = {loadingTimes}/>}
+                {characters.length == loadingTimes && loadedToggle == false ? setLoadedToggle(true) : null}
                 <button 
                 className='buttonRed'
-                onClick={generateCharacters} 
+                onClick={() => {
+                    if (loadedToggle) {
+                        setLoadingTimes(loadingTimes+9);
+                        generateCharacters();
+                        setLoadedToggle(false);
+                    }
+                }}
                 >LOAD MORE</button>
             </div>
             
@@ -50,11 +61,11 @@ const Characters = () => {
     )
 }
 
-const View = () => {
+const View = ({loadingTimes}) => {
 
     const ar = [];
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < loadingTimes; i++) {
         ar.push(
             <div className='item placeholder-glow' key={i}>
                 <img className='placeholder' src='image_not_available.jpg' alt="" />

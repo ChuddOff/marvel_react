@@ -1,4 +1,4 @@
-
+ 
 
 class MarvelServices {
     getRandomNumber = (min, max) => {
