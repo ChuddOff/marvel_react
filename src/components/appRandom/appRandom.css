@@ -48,7 +48,8 @@
     position: relative;
     width: auto;
     padding: 35px 137px 35px 40px;
-    background-color: rgb(35, 34, 34)
+    background-color: rgb(35, 34, 34);
+    overflow: hidden;
 }
 .random .randomTry h3 {
     font-weight: 700;
