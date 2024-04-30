@@ -1,4 +1,5 @@
 import { useState, useEffect  } from 'react';
+import { NavLink } from "react-router-dom";
 
 import './characterDetail.css'
 
@@ -27,9 +28,9 @@ const Detail = ({characterAbout}) => {
             </div>
         )
     }
-
-    const comics = characterAbout.comics.items.map(item => {
-        return <li><a href={item.resourceURI}>{item.name}</a></li>
+    
+    const comics = characterAbout.comics.items.map((item, i) => {
+        return <li key={i}><NavLink to={`/comics/${item.resourceURI.split('/')[6]}`}>📜 {item.name}</NavLink></li>
         
     })
 
@@ -38,17 +39,17 @@ const Detail = ({characterAbout}) => {
             <div className='picture'>
                 <img src={characterAbout.thumbnail.path +'.'+ characterAbout.thumbnail.extension} alt="character" />
                 <div className='more'>
-                    <h3>{characterAbout.name}</h3>
+                    <h3>💖 {characterAbout.name}</h3>
                     <div className='buttons'>
                         <button className="buttonRed">HOMEPAGE</button>
                         <button className="buttonGray">WIKI</button>
                     </div>
                 </div>
             </div>
-            <h4>In Norse mythology, Loki is a god or jötunn (or both). Loki is the son of Fárbauti and Laufey, and the brother of Helblindi and Býleistr. By the jötunn Angrboða, Loki is the father of Hel, the wolf Fenrir, and the world serpent Jörmungandr. By Sigyn, Loki is the father of Nari and/or Narfi and with the stallion Svaðilfari as the father, Loki gave birth—in the form of a mare—to the eight-legged horse Sleipnir. In addition, Loki is referred to as the father of Váli in the Prose Edda.</h4>
-            <h3>Comics:</h3>
+            <h4>📌 {characterAbout.description ? characterAbout.description : 'No description...'}</h4>
+            <h3>📢 Comics:</h3>
             <ul>
-                {comics.length == 0 ? <h3>There no comics!</h3> : comics}
+                {comics.length === 0 ? <h3>There no comics!</h3> : comics}
             </ul>
         </div>
     )

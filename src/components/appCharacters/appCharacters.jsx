@@ -10,8 +10,8 @@ const Characters = () => {
 
     const [characters, setCharacters] = useState([]);
     const [characterAbout, setCharacterAbout] = useState(null);
-    const [loadingTimes, setLoadingTimes] = useState();
-    const [loadedToggle, setLoadedToggle] = useState();
+    const [loadingTimes, setLoadingTimes] = useState(9);
+    const [loadedToggle, setLoadedToggle] = useState(false);
 
 
     const generateCharacters = () => {
@@ -21,11 +21,7 @@ const Characters = () => {
     }
     useEffect(() => {
         generateCharacters();
-        setLoadingTimes(9);
-        setLoadedToggle(false)
     }, [])
-
-    console.log(characters);
 
 
     const characterList = characters.map((character, id) => {
@@ -41,8 +37,8 @@ const Characters = () => {
     return (
         <main className='main'>
             <div className='charactersItems'>
-                {characters.length == loadingTimes ? characterList : <View loadingTimes = {loadingTimes}/>}
-                {characters.length == loadingTimes && loadedToggle == false ? setLoadedToggle(true) : null}
+                {characters.length === loadingTimes ? characterList : <View loadingTimes = {loadingTimes}/>}
+                {characters.length === loadingTimes && loadedToggle === false ? setLoadedToggle(true) : null}
                 <button 
                 className='buttonRed'
                 onClick={() => {

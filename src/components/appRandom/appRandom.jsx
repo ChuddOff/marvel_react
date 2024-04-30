@@ -24,7 +24,7 @@ const RandomCharacter = () => {
             {character ? <View character={character}/> : <Loading />}
 
             <div className='randomTry'>
-                <h3>Random character for today! <br /> Do you want to get to know him better?</h3>
+                <h3>🎲 Random character for today! <br /> Do you want to get to know him better?</h3>
                 <h4>Or choose another one</h4>
                 <button 
                 className='buttonRed'
@@ -41,8 +41,8 @@ const View = ({character}) => {
         <div className="randomCharacter">
             <img src={character.thumbnail.path +'.'+ character.thumbnail.extension} alt="character" />
             <div className='randomCharacterInfo'>
-                <h3>{character.name}</h3>
-                <h4>As the Norse God of thunder and lightning, Thor wields one of the greatest weapons ever made, the enchanted hammer Mjolnir. While others have described Thor as an over-muscled, oafish imbecile, he's quite smart and compassionate...</h4>
+                <h3>💖 {character.name}</h3>
+                <h4>📌 {character.description ? character.description : 'No description...'}</h4>
                 <div className='randomCharacterInfoButtons'>
                     <button className='buttonRed'>HOMEPAGE</button>
                     <button className='buttonGray'>WIKI</button>
@@ -51,7 +51,7 @@ const View = ({character}) => {
         </div>
     )
 }
-const Loading = ({character}) => {
+const Loading = () => {
     return(
         <div className="randomCharacter placeholder-glow">
             <img className='placeholder' src='image_not_available.jpg' alt="image_not_available" />

@@ -1,0 +1,40 @@
+.comics {
+    max-width: 1100px;
+    width: 100%;
+    height: auto;
+}
+.comics .banner {
+    margin-top: 60px;
+    max-width: 1100px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    background-color: rgb(35, 34, 34);
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.comics .banner img {
+    width: 152px;
+    height: 100px;
+}
+.comics .banner h2 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    width: 235px;
+}
+.comics .comicsImems {
+    display: flex;
+    gap: 66px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+    margin-top: 45px;
+}
+@media (max-width: 768px) {
+    .comics .comicsImems {
+        align-items: center;
+        flex-direction: column;
+    }
+}

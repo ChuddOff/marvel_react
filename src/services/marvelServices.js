@@ -14,10 +14,16 @@ class MarvelServices {
         return await res.json();
     }
     getAllCharacters = () => {
-        return this.getResource(`https://gateway.marvel.com:443/v1/public/characters?limit=9&offset=${this.getRandomNumber(210, 1210)}&apikey=8a0850af6bfba3059c94452f4d6cfeea`)
+        return this.getResource(`https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=9&offset=${this.getRandomNumber(210, 1210)}&apikey=8a0850af6bfba3059c94452f4d6cfeea`)
     }
     getCharacter = () => {
-        return this.getResource(`https://gateway.marvel.com:443/v1/public/characters?limit=1&offset=${this.getRandomNumber(210, 1210)}&apikey=8a0850af6bfba3059c94452f4d6cfeea`)
+        return this.getResource(`https://gateway.marvel.com:443/v1/public/characters?orderBy=-modified&limit=1&offset=${this.getRandomNumber(210, 1210)}&apikey=8a0850af6bfba3059c94452f4d6cfeea`)
+    }
+    getAllComics = () => {
+        return this.getResource(`https://gateway.marvel.com:443/v1/public/comics?orderBy=-modified&limit=8&offset=${this.getRandomNumber(210, 1210)}&apikey=8a0850af6bfba3059c94452f4d6cfeea`)
+    }
+    getComicsDetails = (id) => {
+        return this.getResource(`https://gateway.marvel.com:443/v1/public/comics/${id}?apikey=8a0850af6bfba3059c94452f4d6cfeea`)
     }
 }
 
