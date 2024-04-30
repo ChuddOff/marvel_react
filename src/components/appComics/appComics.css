@@ -13,6 +13,7 @@
     align-items: center;
     flex-wrap: wrap;
     justify-content: space-around;
+    padding: 10px 0 10px 0;
 }
 .comics .banner img {
     width: 152px;
